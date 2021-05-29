@@ -126,20 +126,28 @@
 
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
+const restartButton = document.getElementById('restart-btn')
+const totalScoreButton = document.getElementById('totalscore')
+const result=document.getElementById('Result')
+const explain=document.getElementById('explaination')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-
+let score=0
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
+restartButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
 })
 
 function startGame() {
+  score=0
   startButton.classList.add('hide')
+  restartButton.classList.add('hide')
+  totalScoreButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
   questionContainerElement.classList.remove('hide')
@@ -152,7 +160,9 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
+  //console.log(score)
   questionElement.innerText = question.question
+  explain.innerText=question.explain;
   question.answers.forEach(answer => {
     const button = document.createElement('button')
     button.innerText = answer.text
@@ -168,6 +178,8 @@ function showQuestion(question) {
 function resetState() {
   clearStatusClass(document.body)
   nextButton.classList.add('hide')
+  result.classList.add('hide')
+  explain.classList.add('hide')
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
@@ -176,6 +188,16 @@ function resetState() {
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
+  if (selectedButton.dataset.correct){
+    score++;
+    console.log(score);
+    result.innerText="Correct ✅";
+
+  }
+  else{
+    result.innerText="Wrong ❌ ";
+  }
+  
   setStatusClass(document.body, correct)
   Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
@@ -183,10 +205,15 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
-    startButton.innerText = 'Restart'
-    startButton.classList.add('correct')
-    startButton.classList.remove('hide')
+    restartButton.innerText = "RESTART!"
+    restartButton.classList.add('correct')
+    restartButton.classList.remove('hide')
+    totalScoreButton.innerText = "Score: "+score;
+    totalScoreButton.classList.add('correct')
+    totalScoreButton.classList.remove('hide')
   }
+  explain.classList.remove('hide')
+  result.classList.remove('hide')
 }
 
 function setStatusClass(element, correct) {
@@ -194,6 +221,7 @@ function setStatusClass(element, correct) {
   clearStatusClass(element)
   if (correct) {
     element.classList.add('correct')
+    
   } else {
     element.classList.add('wrong')
   }
@@ -207,35 +235,63 @@ function clearStatusClass(element) {
 
 const questions = [
   {
-    question: 'What is Monica\'s Apartment number?',
+    question: 'What’s sexual orientation?',
     answers: [
-      { text: '20', correct: true },
-      { text: '21', correct: false }
-    ]
+      { text: 'Pattern of romantic or sexual attraction', correct: true },
+      { text: 'How we present ourselves outwardly to other', correct: false },
+      { text: 'Sense of being male,female,both, or neither', correct: false },
+      { text: 'Same is gender Identity', correct: false }
+
+    ],
+    explain:'Pattern of romantic or sexual attraction to persons of the opposite sex or gender, the same sex or gender, or to both sexes or more than one gender.'
   },
   {
-    question: 'Who is the best Character in Friends?',
+    question: 'Is LGBTQ+ community only related to sexual orientation?',
     answers: [
-      { text: 'Chandler', correct: true },
-      { text: 'Monica', correct: true },
-      { text: 'Phoebe', correct: true },
-      { text: 'Joey', correct: true }
-    ]
+      { text: 'No', correct: true },
+      { text: 'Yes', correct: false },
+      
+    ],
+    explain:'The ‘transgender’represents gender identity and is completely separate from sexual orientation'
   },
   {
-    question: 'Who is the best couple in Friends?',
+    question: 'What Pronouns should be used if you don\'t know a Person\'s pronouns?',
     answers: [
-      { text: 'Chandler-Monica', correct: true },
-      { text: 'Ross Rachel', correct: false },
-      { text: 'Joey Phoebe', correct: false },
-      { text: 'Monica Richard', correct: false }
-    ]
+      { text: 'they/them/theirs', correct: true },
+      { text: 'he/him', correct: false },
+      { text: 'she/her', correct: false },
+      { text: 'it', correct: false }
+    ],
+    explain:'Usually it’s safe to use they/them/theirs unless that person tells you otherwise.'
   },
   {
-    question: 'What is 4 * 2?',
+    question: 'Violence against LGBTQ+ people is a thing of the past.',
     answers: [
-      { text: '6', correct: false },
-      { text: '8', correct: true }
-    ]
+      { text: 'True', correct: false },
+      { text: 'False', correct: true }
+    ],
+    explain:'20-25% of lesbian and gay people experience hate crimes sometime in their lives.Homicides against LGBTQ+ have surged since 2007'
+  },
+  {
+    question: 'How many genders are there?',
+    answers: [
+      { text: 'One', correct: false },
+      { text: 'Two', correct: false },
+      { text: 'Three', correct: false },
+      {text: 'More Than Three', correct: true }
+
+    ],
+    explain:'There are many different gender identities, including male, female, transgender, gender neutral, non-binary, agender, pangender etc'
+  },
+  {
+    question: 'What does \'Q\' stand for in LGBTQ+ ?',
+    answers: [
+      { text: 'One', correct: false },
+      { text: 'Two', correct: false },
+      { text: '', correct: false },
+      {text: 'Queer', correct: true }
+
+    ],
+    explain:'Queer is a word that describes sexual and gender identities other than straight and cisgender'
   }
 ]

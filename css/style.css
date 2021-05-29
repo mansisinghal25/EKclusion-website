@@ -5,6 +5,7 @@ body {
     color: #797979;
     background: #ffffff;
     font-family: 'Open Sans', sans-serif;
+   
 }
 
 h1,
@@ -2017,12 +2018,18 @@ a:focus {
      --hue-wrong:345 ;
      --hue-correct:153.3;
 }
-
-.quiz-container{
-    /*width:800px;
-    max-width: 80%;*/
+#question{
+    display: flex;
+    justify-content: center;
+    color: #343148;
+    font-size:2vw;
     font-family: 'Open Sans', sans-serif;
-    background-color: white;
+
+}
+.quiz-container{
+  
+    font-family: 'Open Sans', sans-serif;
+   
     border-radius: 5px;
     padding:10px;
 
@@ -2036,6 +2043,7 @@ a:focus {
     justify-content: center;
     align-items: center;
     background-color: hsl(var(--hue),100%,90%);
+   /* grid-template-columns: repeat(2,auto);*/
 }
 .btn-grid{
     display: grid;
@@ -2054,8 +2062,8 @@ a:focus {
 }
 .btn:hover{
     border-color:#343148;
-     background-color:white; 
-     color:#F7CAC9;
+    background-color:white; 
+    color:#F7CAC9;
 }
 .btn.correct{
     --hue:var(--hue-correct);
@@ -2068,11 +2076,41 @@ a:focus {
     font-size: 1.5rem;
     font-weight: bold;
     padding:10px 20px;
+
 }
 .controls{
     display: flex;
     justify-content: center;
+    padding:5px 5px;
     align-items: center;
+}
+.explaination{
+    
+    display: flex;
+    justify-content: center;
+    padding:5px 5px;
+    align-items: center;
+    color: #343148;
+    
+
+}
+.Result{
+    
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    color: #343148;
+    font-size:3vw;
+
+}
+.totalscore{
+    display: flex;
+    justify-content: center;
+    padding:5px 10px;
+    align-items: center;
+    color: #343148;
+    font-size:3vw;
 }
 .hide{
     display: none;
