@@ -2065,15 +2065,13 @@ a:focus {
 .btn:hover{
     border-color:#343148;
     background-color:white; 
-    color:#F7CAC9;
+    color:#343148;
 }
 .btn.correct{
     --hue:var(--hue-correct);
    
 }
-.btn.wrong{
-    --hue:var(--hue-wrong);
-}
+
 .start-btn,.next-btn{
     font-size: 1.5rem;
     font-weight: bold;
@@ -2085,6 +2083,7 @@ a:focus {
     justify-content: center;
     padding:5px 5px;
     align-items: center;
+    color:#F7CAC9;
 }
 .explaination{
     
@@ -2105,6 +2104,12 @@ a:focus {
     color: #343148;
     font-size:3vw;
 
+}
+#home{
+     color: #F7CAC9;
+}
+#home:hover{
+    color:#343148;
 }
 .totalscore{
     display: flex;

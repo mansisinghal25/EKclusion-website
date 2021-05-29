@@ -130,6 +130,7 @@ const restartButton = document.getElementById('restart-btn')
 const totalScoreButton = document.getElementById('totalscore')
 const result=document.getElementById('Result')
 const explain=document.getElementById('explaination')
+const exit = document.getElementById('exit-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
@@ -146,6 +147,7 @@ nextButton.addEventListener('click', () => {
 function startGame() {
   score=0
   startButton.classList.add('hide')
+  exit.classList.add('hide')
   restartButton.classList.add('hide')
   totalScoreButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -211,6 +213,7 @@ function selectAnswer(e) {
     totalScoreButton.innerText = "Score: "+score;
     totalScoreButton.classList.add('correct')
     totalScoreButton.classList.remove('hide')
+    exit.classList.remove('hide')
   }
   explain.classList.remove('hide')
   result.classList.remove('hide')
@@ -240,7 +243,7 @@ const questions = [
       { text: 'Pattern of romantic or sexual attraction', correct: true },
       { text: 'How we present ourselves outwardly to other', correct: false },
       { text: 'Sense of being male,female,both, or neither', correct: false },
-      { text: 'Same is gender Identity', correct: false }
+      { text: 'Same as gender Identity', correct: false }
 
     ],
     explain:'Pattern of romantic or sexual attraction to persons of the opposite sex or gender, the same sex or gender, or to both sexes or more than one gender.'
@@ -286,9 +289,9 @@ const questions = [
   {
     question: 'What does \'Q\' stand for in LGBTQ+ ?',
     answers: [
-      { text: 'One', correct: false },
-      { text: 'Two', correct: false },
-      { text: '', correct: false },
+      { text: 'Does not mean anything', correct: false },
+      { text: 'Quail', correct: false },
+      { text: 'Queen', correct: false },
       {text: 'Queer', correct: true }
 
     ],
