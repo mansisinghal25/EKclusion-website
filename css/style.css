@@ -512,7 +512,7 @@ a:focus {
 .about .about-img img {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 450px;
     object-fit: cover;
 }
 
@@ -1215,10 +1215,12 @@ a:focus {
 .blog .blog-img {
     position: relative;
     width: 100%;
+
 }
 
 .blog .blog-img img {
     width: 100%;
+    height: 180px;
 }
 
 .blog .blog-text {
@@ -1243,7 +1245,7 @@ a:focus {
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #343148;
+    color: #F7CAC9;
     transition: .3s;
 }
 
@@ -1252,7 +1254,7 @@ a:focus {
 }
 
 .blog .blog-item a.btn:hover {
-    color: #F7CAC9;
+    color: #343148 ;
 }
 
 .blog .blog-meta {
