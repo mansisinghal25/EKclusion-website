@@ -37,10 +37,6 @@ a:focus {
 .container-fluid {
     max-width: 1366px;
 }
-.put-left
-{
-    padding-left: 1300px;
-}
 
 .back-to-top {
     position: fixed;
@@ -101,6 +97,10 @@ a:focus {
     padding: 0 10px;
     text-align: center;
     border-left: 1px solid rgba(255, 255, 255, .15);
+}
+.put-left
+{
+    padding-left: 1300px;
 }
 
 .top-bar .text:last-child {
@@ -211,7 +211,7 @@ a:focus {
 
 .footer .container-fluid {
     padding: 90px 0 0 0;
-    background: linear-gradient(rgba(52, 49, 72, .0), rgba(52, 49, 72, .0)), url(../img/sameer2.png);
+    background: linear-gradient(rgba(52, 49, 72, .0), rgba(52, 49, 72, .0)), url(../img/final.png);
     
     background-repeat: no-repeat;
     background-size: contain;

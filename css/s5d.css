@@ -37,10 +37,6 @@ a:focus {
 .container-fluid {
     max-width: 1366px;
 }
-.put-left
-{
-    padding-left: 1300px;
-}
 
 .back-to-top {
     position: fixed;
@@ -78,6 +74,10 @@ a:focus {
     position: relative;
     height: 35px;
     background: #343148;
+}
+.put-left
+{
+    padding-left: 1300px;
 }
 
 .top-bar .top-bar-left {
@@ -211,7 +211,7 @@ a:focus {
 
 .footer .container-fluid {
     padding: 90px 0 0 0;
-    background: linear-gradient(rgba(52, 49, 72, .0), rgba(52, 49, 72, .0)), url(../img/sameer2.png);
+    background: linear-gradient(rgba(52, 49, 72, .0), rgba(52, 49, 72, .0)), url(../img/distract.png);
     
     background-repeat: no-repeat;
     background-size: contain;
