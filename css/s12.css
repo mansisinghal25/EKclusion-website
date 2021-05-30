@@ -39,7 +39,7 @@ a:focus {
 }
 .put-left
 {
-    padding-left: 1300px;
+    padding-left: 1200px;
 }
 
 .back-to-top {
@@ -183,7 +183,7 @@ a:focus {
 .btn:hover{
     border-color:#343148;
      background-color:white; 
-     color:#F7CAC9;
+     color:#343148;
 }
 
 .options1
