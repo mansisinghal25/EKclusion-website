@@ -54,7 +54,7 @@ a:focus {
 }
 .put-left
 {
-    padding-left: 1300px;
+    padding-left: 1200px;
 }
 .back-to-top:hover {
     background: #343148;
@@ -75,7 +75,7 @@ a:focus {
 /**********************************/
 .top-bar {
     position: relative;
-    height: 35px;
+    height: 20px;
     background: #343148;
 }
 
@@ -129,8 +129,8 @@ a:focus {
 
 .top-bar .social {
     display: flex;
-    height: 35px;
-    font-size: 0;
+    height: 30px;
+    
  
 
 }
@@ -180,9 +180,10 @@ a:focus {
     outline: none;
 }
 .btn:hover{
+    border:1px;
     border-color:#343148;
      background-color:white; 
-     color:#F7CAC9;
+     color:#343148;
 }
 
 .options1
@@ -280,6 +281,7 @@ a:focus {
 }
 
 .footer .footer-social {
+
     position: relative;
     margin-top: 5px;
 }
