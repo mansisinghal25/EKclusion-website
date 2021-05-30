@@ -21,6 +21,7 @@ a {
     transition: .3s;
 }
 
+
 a:hover,
 a:active,
 a:focus {
@@ -334,6 +335,10 @@ padd
 
 .footer .copyright p a:hover {
     color: #F7CAC9;
+}
+.put-left
+{
+    padding-left: 1200px;
 }
 
 @media (max-width: 767.98px) {
