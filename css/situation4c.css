@@ -88,6 +88,11 @@ a:focus {
     justify-content: flex-end;
 }
 
+.put-left
+{
+    padding-left: 1300px;
+}
+
 .top-bar .text {
     display: flex;
     align-items: center;
